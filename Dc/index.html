@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord - Login</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Removed external favicon to work offline -->
+    <!-- <link rel="icon" href="https://discord.com/favicon.ico"> -->
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-wrapper">
+            <div class="login-content">
+                <!-- Login Form Card -->
+                <div class="login-card">
+                    <div class="card-content">
+                        <!-- Discord Logo -->
+                        <div class="logo-container">
+                            <svg width="124" height="34" viewBox="0 0 124 34" class="discord-logo">
+                                <g fill="currentColor">
+                                    <path d="M26.0015 6.9529C24.0021 6.03845 21.8787 5.37198 19.6623 5C19.3833 5.48048 19.0733 6.13144 18.8563 6.64292C16.4989 6.30193 14.1585 6.30193 11.8336 6.64292C11.6166 6.13144 11.2911 5.48048 11.0276 5C8.79575 5.37198 6.67235 6.03845 4.6869 6.9529C0.672601 12.8736 -0.41235 18.6548 0.130124 24.3585C2.79599 26.2959 5.36889 27.4739 7.89682 28.2489C8.51679 27.4119 9.0672 26.5129 9.54266 25.5675C8.61963 25.2265 7.74987 24.808 6.93897 24.312C7.15297 24.1571 7.36197 23.9866 7.56497 23.8161C12.6241 26.1255 18.0789 26.1255 23.0854 23.8161C23.2884 23.9866 23.4974 24.1571 23.7114 24.312C22.8849 24.808 22.0151 25.2265 21.0921 25.5675C21.5676 26.5129 22.1025 27.4119 22.7379 28.2489C25.2658 27.4739 27.8387 26.2959 30.5046 24.3585C31.1219 17.7038 29.4564 12.0057 26.0015 6.9529ZM10.2527 20.8402C8.73376 20.8402 7.48849 19.4608 7.48849 17.7714C7.48849 16.082 8.70276 14.7026 10.2527 14.7026C11.8026 14.7026 13.0169 16.082 13.0169 17.7714C13.0169 19.4608 11.8026 20.8402 10.2527 20.8402ZM20.4373 20.8402C18.9184 20.8402 17.6731 19.4608 17.6731 17.7714C17.6731 16.082 18.8874 14.7026 20.4373 14.7026C21.9872 14.7026 23.2015 16.082 23.2015 17.7714C23.2015 19.4608 21.9872 20.8402 20.4373 20.8402Z"/>
+                                    <path d="M41.2697 9.86615C41.2697 9.03671 40.7647 8.53373 39.7585 8.53373H37.632V18.7366H39.7585C40.7647 18.7366 41.2697 18.2299 41.2697 17.4005V9.86615ZM43.5 17.4005C43.5 19.4235 42.4348 20.9695 39.7585 20.9695H35.4V6.3007H39.7585C42.4348 6.3007 43.5 7.84678 43.5 9.86976V17.4005Z"/>
+                                    <path d="M49.5 8.53373H47.25V6.3007H53.21V8.53373H50.96V20.9695H49.5V8.53373Z"/>
+                                    <path d="M67.175 17.4005C67.175 19.4235 66.1098 20.9695 63.4335 20.9695H59.075V6.3007H63.4335C66.1098 6.3007 67.175 7.84678 67.175 9.86976V17.4005ZM64.94 9.86615C64.94 9.03671 64.435 8.53373 63.4288 8.53373H61.3023V18.7366H63.4288C64.435 18.7366 64.94 18.2299 64.94 17.4005V9.86615Z"/>
+                                    <path d="M75.0337 11.6908C75.0337 12.5202 74.5287 13.0232 73.5225 13.0232H70.185V11.6908H73.5225C74.5287 11.6908 75.0337 11.1878 75.0337 10.3584V9.86615C75.0337 9.03671 74.5287 8.53373 73.5225 8.53373H70.185V6.3007H73.5225C76.1988 6.3007 77.264 7.84678 77.264 9.86976V10.3584C77.264 11.1878 77.264 11.6908 75.0337 11.6908Z"/>
+                                    <path d="M83.3963 6.3007V11.6908H86.7338V13.0232H83.3963V18.7366H87.19V20.9695H81.17V6.3007H87.19V8.53373H83.3963Z"/>
+                                    <path d="M94.5463 17.4005C94.5463 19.4235 93.4811 20.9695 90.8048 20.9695H86.4463V6.3007H90.8048C93.4811 6.3007 94.5463 7.84678 94.5463 9.86976V17.4005ZM92.3113 9.86615C92.3113 9.03671 91.8063 8.53373 90.8001 8.53373H88.6736V18.7366H90.8001C91.8063 18.7366 92.3113 18.2299 92.3113 17.4005V9.86615Z"/>
+                                </g>
+                            </svg>
+                        </div>
+
+                        <div class="welcome-header">
+                            <h1 class="welcome-title" data-testid="welcome-title">Welcome back!</h1>
+                            <p class="welcome-subtitle" data-testid="welcome-subtitle">We're so excited to see you again!</p>
+                        </div>
+
+                        <form class="login-form" data-testid="login-form" id="loginForm">
+                            <div class="form-group">
+                                <label class="form-label">
+                                    EMAIL OR PHONE NUMBER <span class="required">*</span>
+                                </label>
+                                <input 
+                                    type="text" 
+                                    class="form-input" 
+                                    id="emailOrPhone"
+                                    data-testid="input-email-phone"
+                                    required
+                                />
+                                <div class="error-message" id="emailError"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">
+                                    PASSWORD <span class="required">*</span>
+                                </label>
+                                <div class="password-container">
+                                    <input 
+                                        type="password" 
+                                        class="form-input" 
+                                        id="password"
+                                        data-testid="input-password"
+                                        required
+                                    />
+                                    <button type="button" class="password-toggle" id="passwordToggle" data-testid="button-toggle-password">
+                                        <svg class="eye-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <svg class="eye-off-icon hidden" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="m9.88 9.88a3 3 0 1 0 4.24 4.24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="m10.73 5.08a11.02 11.02 0 0 1 1.27-.08c7 0 11 8 11 8a13.16 13.16 0 0 1-1.67 2.68" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="m6.61 6.61A13.526 13.526 0 0 0 1 12s4 8 11 8a9.74 9.74 0 0 0 5.39-1.61" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <line x1="2" x2="22" y1="2" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="error-message" id="passwordError"></div>
+                            </div>
+
+                            <div class="forgot-password">
+                                <a href="#" class="link-primary" data-testid="link-forgot-password">
+                                    Forgot your password?
+                                </a>
+                            </div>
+
+                            <button type="submit" class="login-button" data-testid="button-login">
+                                Log In
+                            </button>
+
+                            <div class="register-prompt" data-testid="register-prompt">
+                                Need an account? 
+                                <a href="#" class="link-primary" data-testid="link-register">Register</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- QR Code Section -->
+                <div class="qr-section" data-testid="qr-section">
+                    <div class="qr-container">
+                        <div class="qr-code" data-testid="qr-code">
+                            <div class="qr-pattern"></div>
+                        </div>
+                        
+                        <h2 class="qr-title" data-testid="qr-title">Log in with QR Code</h2>
+                        <p class="qr-description" data-testid="qr-description">
+                            Scan this with the <strong>Discord mobile app</strong> to log in instantly.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Background decoration -->
+        <div class="background-decoration">
+            <div class="decoration-blob decoration-blob-1"></div>
+            <div class="decoration-blob decoration-blob-2"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
