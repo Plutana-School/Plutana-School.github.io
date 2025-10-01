@@ -1,401 +1,179 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Error 404</title>
-    </head>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Error 404</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=MS+PGothic&display=swap');
 
-    <body>
-        <style>
-            @import url('https://fonts.googleapis.com/css?family=Fira+Mono:400');
+  body {
+    background-color: #008080;
+    font-family: 'MS PGothic', monospace, sans-serif;
+    margin: 0;
+    padding: 16px;
+    color: black;
+  }
 
-            body {
-                background: repeating-linear-gradient(0deg, #0e0d0e 25%, #0e0d0e 50%, #171819 50%, #171819 75%);
-                background-size: 10px 10px;
-                height: 100vh;
-                width: 100vw;
-                font-size: 5vw;
-                overflow: hidden;
-                display: flex;
-                flex-direction: column;
-                font-family: 'Fira Mono', monospace;
-                justify-content: center;
-                align-items: center;
-            }
+  .window {
+    width: 400px;
+    border: 2px solid #000080;
+    box-shadow:
+      3px 3px 0 #c0c0c0,
+      4px 4px 0 #fff,
+      5px 5px 0 #808080;
+    background-color: #c0c0c0;
+    margin: 40px auto;
+  }
 
-            .wisedom {
-                font-family: url(VGA.tff);
-                font-weight: 400;
-                text-rendering: optimizelegibility;
-                color: #009400;
-                letter-spacing: 0px;
-                font-size: 40px;
-                min-height: 50px;
-                animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
-                border-right: 3px solid #009400;
-            }
+  .title-bar {
+    background: linear-gradient(to bottom, #000080, #0000cd);
+    color: white;
+    padding: 2px 8px;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+  }
 
-            @keyframes blink {
-                50% {
-                    border-color: transparent;
-                }
-            }
-            .glitch {
-                font-size: 10vw;
-                position: relative;
-                color: #fff;
-            }
-            .line:not(:first-child) {
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
-            .line:nth-child(1) {
-                animation: clip 3000ms -300ms linear infinite, glitch1 500ms -184ms linear infinite;
-            }
-            @keyframes glitch1 {
-                0% {
-                    transform: translateX(0);
-                }
-                80% {
-                    transform: translateX(0);
-                    color: #fff;
-                }
-                85% {
-                    transform: translateX(2px);
-                    color: #4e9a26;
-                }
-                90% {
-                    transform: translateX(5px);
-                    color: #ac1212;
-                }
-                95% {
-                    transform: translateX(1px);
-                    color: #fff;
-                }
-                100% {
-                    transform: translateX(0);
-                }
-            }
-            .line:nth-child(2) {
-                animation: clip 3000ms -600ms linear infinite, glitch2 500ms -740ms linear infinite;
-            }
-            @keyframes glitch2 {
-                0% {
-                    transform: translateX(0);
-                }
-                80% {
-                    transform: translateX(0);
-                    color: #fff;
-                }
-                85% {
-                    transform: translateX(5px);
-                    color: #4e9a26;
-                }
-                90% {
-                    transform: translateX(-1px);
-                    color: #ac1212;
-                }
-                95% {
-                    transform: translateX(-1px);
-                    color: #fff;
-                }
-                100% {
-                    transform: translateX(0);
-                }
-            }
-            .line:nth-child(3) {
-                animation: clip 3000ms -900ms linear infinite, glitch3 500ms -333ms linear infinite;
-            }
-            @keyframes glitch3 {
-                0% {
-                    transform: translateX(0);
-                }
-                80% {
-                    transform: translateX(0);
-                    color: #fff;
-                }
-                85% {
-                    transform: translateX(-2px);
-                    color: #4e9a26;
-                }
-                90% {
-                    transform: translateX(3px);
-                    color: #ac1212;
-                }
-                95% {
-                    transform: translateX(0px);
-                    color: #fff;
-                }
-                100% {
-                    transform: translateX(0);
-                }
-            }
-            .line:nth-child(4) {
-                animation: clip 3000ms -1200ms linear infinite, glitch4 500ms -733ms linear infinite;
-            }
-            @keyframes glitch4 {
-                0% {
-                    transform: translateX(0);
-                }
-                80% {
-                    transform: translateX(0);
-                    color: #fff;
-                }
-                85% {
-                    transform: translateX(-4px);
-                    color: #4e9a26;
-                }
-                90% {
-                    transform: translateX(5px);
-                    color: #ac1212;
-                }
-                95% {
-                    transform: translateX(0px);
-                    color: #fff;
-                }
-                100% {
-                    transform: translateX(0);
-                }
-            }
-            .line:nth-child(5) {
-                animation: clip 3000ms -1500ms linear infinite, glitch5 500ms -896ms linear infinite;
-            }
-            @keyframes glitch5 {
-                0% {
-                    transform: translateX(0);
-                }
-                80% {
-                    transform: translateX(0);
-                    color: #fff;
-                }
-                85% {
-                    transform: translateX(-3px);
-                    color: #4e9a26;
-                }
-                90% {
-                    transform: translateX(5px);
-                    color: #ac1212;
-                }
-                95% {
-                    transform: translateX(3px);
-                    color: #fff;
-                }
-                100% {
-                    transform: translateX(0);
-                }
-            }
-            .line:nth-child(6) {
-                animation: clip 3000ms -1800ms linear infinite, glitch6 500ms -815ms linear infinite;
-            }
-            @keyframes glitch6 {
-                0% {
-                    transform: translateX(0);
-                }
-                80% {
-                    transform: translateX(0);
-                    color: #fff;
-                }
-                85% {
-                    transform: translateX(-4px);
-                    color: #4e9a26;
-                }
-                90% {
-                    transform: translateX(-4px);
-                    color: #ac1212;
-                }
-                95% {
-                    transform: translateX(-3px);
-                    color: #fff;
-                }
-                100% {
-                    transform: translateX(0);
-                }
-            }
-            .line:nth-child(7) {
-                animation: clip 3000ms -2100ms linear infinite, glitch7 500ms -34ms linear infinite;
-            }
-            @keyframes glitch7 {
-                0% {
-                    transform: translateX(0);
-                }
-                80% {
-                    transform: translateX(0);
-                    color: #fff;
-                }
-                85% {
-                    transform: translateX(2px);
-                    color: #4e9a26;
-                }
-                90% {
-                    transform: translateX(5px);
-                    color: #ac1212;
-                }
-                95% {
-                    transform: translateX(-3px);
-                    color: #fff;
-                }
-                100% {
-                    transform: translateX(0);
-                }
-            }
-            .line:nth-child(8) {
-                animation: clip 3000ms -2400ms linear infinite, glitch8 500ms -842ms linear infinite;
-            }
-            @keyframes glitch8 {
-                0% {
-                    transform: translateX(0);
-                }
-                80% {
-                    transform: translateX(0);
-                    color: #fff;
-                }
-                85% {
-                    transform: translateX(4px);
-                    color: #4e9a26;
-                }
-                90% {
-                    transform: translateX(1px);
-                    color: #ac1212;
-                }
-                95% {
-                    transform: translateX(-4px);
-                    color: #fff;
-                }
-                100% {
-                    transform: translateX(0);
-                }
-            }
-            .line:nth-child(9) {
-                animation: clip 3000ms -2700ms linear infinite, glitch9 500ms -751ms linear infinite;
-            }
-            @keyframes glitch9 {
-                0% {
-                    transform: translateX(0);
-                }
-                80% {
-                    transform: translateX(0);
-                    color: #fff;
-                }
-                85% {
-                    transform: translateX(1px);
-                    color: #4e9a26;
-                }
-                90% {
-                    transform: translateX(2px);
-                    color: #ac1212;
-                }
-                95% {
-                    transform: translateX(-4px);
-                    color: #fff;
-                }
-                100% {
-                    transform: translateX(0);
-                }
-            }
-            .line:nth-child(10) {
-                animation: clip 3000ms -3000ms linear infinite, glitch10 500ms -648ms linear infinite;
-            }
-            @keyframes glitch10 {
-                0% {
-                    transform: translateX(0);
-                }
-                80% {
-                    transform: translateX(0);
-                    color: #fff;
-                }
-                85% {
-                    transform: translateX(-3px);
-                    color: #4e9a26;
-                }
-                90% {
-                    transform: translateX(2px);
-                    color: #ac1212;
-                }
-                95% {
-                    transform: translateX(3px);
-                    color: #fff;
-                }
-                100% {
-                    transform: translateX(0);
-                }
-            }
-            @keyframes clip {
-                0% {
-                    clip-path: polygon(0 100%, 100% 100%, 100% 120%, 0 120%);
-                }
-                100% {
-                    clip-path: polygon(0 -20%, 100% -20%, 100% 0%, 0 0);
-                }
-            }
+  /* Title bar buttons */
+  .title-bar-controls {
+    display: flex;
+  }
 
-            a {
-                padding: 10px 20px;
-                background-color: #00fa00;
-                color: #000;
-                border-radius: 5px;
-                text-decoration: none;
-                cursor: pointer;
-                transition: 0s;
-            }
+  .title-bar-controls button {
+    width: 18px;
+    height: 18px;
+    margin-left: 4px;
+    background-color: #c0c0c0;
+    border: 2px solid #fff;
+    box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #808080;
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 14px;
+    padding: 0;
+  }
 
-            a:hover {
-                filter: brightness(90%);
-            }
-        </style>
-        <div class="glitch">
-            <div class="line">Error 404</div>
-            <div class="line">Error 404</div>
-            <div class="line">Error 404</div>
-            <div class="line">Error 404</div>
-            <div class="line">Error 404</div>
-            <div class="line">Error 404</div>
-            <div class="line">Error 404</div>
-            <div class="line">Error 404</div>
-            <div class="line">Error 404</div>
-        </div>
-        <span class="wisedom"></span>
-        <h6><a href="/">Return home?</a></h6>
-        <script>
-            const wiseness = [
-                'Welcome to the land of Nothing!',
-                'Here there is absolutely nothing for you.',
-                'I recommend you to go back home',
-                'Please. Go.',
-                'Why are you here?',
-                'I will not repeat this once more.',
-                'GO. NOW.',
-            ];
-            const element = document.getElementsByClassName('wisedom')[0];
-            const button = document.getElementsByTagName('a')[0];
+  .title-bar-controls button:active {
+    border: 2px solid #808080;
+    box-shadow: inset -1px -1px 0 #fff, inset 1px 1px 0 #808080;
+  }
 
-            let currentTextIndex = 0;
-            let charIndex = 0;
+  /* Window content */
+  .window-body {
+    background-color: #fff;
+    padding: 16px;
+    font-size: 14px;
+    border: 2px solid #fff;
+    border-top: none;
+  }
 
-            function type() {
-                let text = wiseness[currentTextIndex];
-                let typeSpeed = 100;
+  h1 {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
 
-                if (charIndex < text.length) {
-                    element.innerHTML += text.charAt(charIndex);
-                    charIndex++;
-                    setTimeout(type, typeSpeed);
-                } else {
-                    setTimeout(deleteText, 3000); // wait 1 second before deleting the text
-                }
-            }
+  .message {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
 
-            function deleteText() {
-                let text = wiseness[currentTextIndex];
-                let deleteSpeed = 100;
+  .btn {
+    background-color: #c0c0c0;
+    border: 2px solid #fff;
+    box-shadow:
+      inset 1px 1px 0 #fff,
+      inset -1px -1px 0 #808080;
+    padding: 6px 12px;
+    font-family: 'MS PGothic', monospace, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+  }
 
-                if (charIndex > 0) {
-                    element.innerHTML = text.substring(0, charIndex - 1);
-                    charIndex--;
-                    setTimeout(deleteText, deleteSpeed);
-                }
-            }
+  .btn:active {
+    box-shadow:
+      inset -1px -1px 0 #fff,
+      inset 1px 1px 0 #808080;
+    border: 2px solid #808080;
+  }
 
-            setTimeout(type, 2000);
-        </script>
-    </body>
+  .wisedom {
+    font-family: 'MS PGothic', monospace, sans-serif;
+    font-size: 12px;
+    margin-bottom: 12px;
+    height: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    border: 1px solid #000080;
+    background: #fff;
+    padding: 2px 4px;
+  }
+</style>
+</head>
+<body>
+  <div class="window" role="dialog" aria-labelledby="title" aria-modal="true">
+    <div class="title-bar">
+      <div id="title">Error 404</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize" title="Minimize" onclick="alert('Minimize button pressed');">-</button>
+        <button aria-label="Maximize" title="Maximize" onclick="alert('Maximize button pressed');">☐</button>
+        <button aria-label="Close" title="Close" onclick="goHome()">X</button>
+      </div>
+    </div>
+    <div class="window-body">
+      <h1>Error 404</h1>
+      <div class="message">The page you are looking for was not found.</div>
+      <div class="wisedom" aria-live="polite"></div>
+      <button class="btn" onclick="goHome()">Return Home</button>
+    </div>
+  </div>
+
+<script>
+  function goHome() {
+    window.location.href = '/';
+  }
+
+  const wiseness = [
+    'Welcome to the land of Nothing!',
+    'Here there is absolutely nothing for you.',
+    'I recommend you to go back home.',
+    'Please. Go.',
+    'Why are you here?',
+    'I will not repeat this once more.',
+    'GO. NOW.',
+  ];
+  const element = document.querySelector('.wisedom');
+  let currentTextIndex = 0;
+  let charIndex = 0;
+  let typing = true;
+
+  function type() {
+    if (typing) {
+      if (charIndex < wiseness[currentTextIndex].length) {
+        element.textContent += wiseness[currentTextIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, 100);
+      } else {
+        typing = false;
+        setTimeout(type, 3000);
+      }
+    } else {
+      if (charIndex > 0) {
+        element.textContent = wiseness[currentTextIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(type, 50);
+      } else {
+        typing = true;
+        currentTextIndex = (currentTextIndex + 1) % wiseness.length;
+        setTimeout(type, 500);
+      }
+    }
+  }
+  setTimeout(type, 1000);
+</script>
+</body>
 </html>
