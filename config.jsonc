@@ -180,6 +180,11 @@
             "aliases": [],
             "categories": []
         },
+        "Jacksmith": {
+            "path": "flash/?game=jacksmith",
+            "aliases": [],
+            "categories": []
+        },
         "Curveball": {
             "path": "flash/?game=curveball",
             "aliases": [],
