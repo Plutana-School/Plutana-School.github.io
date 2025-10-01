@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Windows 95 Style Website</title>
+<style>
+  /* Import pixel font similar to Windows 95 */
+  @font-face {
+    font-family: 'MS Sans Serif';
+    src: local('MS Sans Serif'), local('MS Sans Serif');
+  }
+
+  /* Reset */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    background: #008080; /* classic teal background */
+    font-family: 'MS Sans Serif', Arial, sans-serif;
+    font-size: 12px;
+    color: black;
+    user-select: none;
+  }
+
+  /* Container for windows */
+  #desktop {
+    position: relative;
+    height: 100vh;
+    padding-bottom: 40px; /* space for taskbar */
+  }
+
+  /* Window style */
+  .window {
+    position: absolute;
+    background: #c0c0c0;
+    border: 2px solid white;
+    border-right-color: #404040;
+    border-bottom-color: #404040;
+    width: 300px;
+    height: 200px;
+    box-shadow:
+      1px 1px 0 #808080,
+      2px 2px 0 #404040;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Window title bar */
+  .title-bar {
+    background: linear-gradient(to right, #000080, #0000cd);
+    color: white;
+    padding: 2px 4px;
+    font-weight: bold;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: default;
+  }
+
+  /* Title bar buttons */
+  .title-bar-buttons {
+    display: flex;
+    gap: 2px;
+  }
+  .title-bar-button {
+    width: 16px;
+    height: 14px;
+    background: #c0c0c0;
+    border: 2px solid white;
+    border-right-color: #404040;
+    border-bottom-color: #404040;
+    text-align: center;
+    line-height: 12px;
+    font-weight: bold;
+    font-family: monospace;
+    cursor: pointer;
+    user-select: none;
+  }
+  .title-bar-button:active {
+    border: 2px solid #404040;
+    border-right-color: white;
+    border-bottom-color: white;
+  }
+
+  /* Window content */
+  .window-content {
+    background: white;
+    flex: 1;
+    padding: 8px;
+    overflow: auto;
+    font-size: 12px;
+    color: black;
+  }
+
+  /* Buttons - classic 3D style */
+  button {
+    background: #c0c0c0;
+    border: 2px solid white;
+    border-right-color: #404040;
+    border-bottom-color: #404040;
+    padding: 2px 6px;
+    font-family: 'MS Sans Serif', Arial, sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    user-select: none;
+  }
+  button:active {
+    border: 2px solid #404040;
+    border-right-color: white;
+    border-bottom-color: white;
+  }
+
+  /* Taskbar */
+  #taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: #c0c0c0;
+    border-top: 2px solid white;
+    border-top-color: white;
+    border-left: 2px solid #404040;
+    border-right: 2px solid #404040;
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+    box-shadow:
+      inset 1px 1px 0 #808080,
+      inset -1px -1px 0 #404040;
+  }
+
+  /* Start button */
+  #start-button {
+    background: #000080;
+    color: white;
+    font-weight: bold;
+    padding: 6px 12px;
+    border: 2px solid white;
+    border-right-color: #404040;
+    border-bottom-color: #404040;
+    cursor: pointer;
+    user-select: none;
+    font-size: 13px;
+  }
+  #start-button:active {
+    border: 2px solid #404040;
+    border-right-color: white;
+    border-bottom-color: white;
+  }
+
+  /* Start menu */
+  #start-menu {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    width: 180px;
+    background: #c0c0c0;
+    border: 2px solid white;
+    border-right-color: #404040;
+    border-bottom-color: #404040;
+    box-shadow:
+      2px 2px 0 #404040;
+    display: none;
+    flex-direction: column;
+    font-size: 12px;
+    user-select: none;
+    z-index: 1000;
+  }
+  #start-menu.show {
+    display: flex;
+  }
+  #start-menu button {
+    border: none;
+    border-bottom: 1px solid #808080;
+    text-align: left;
+    padding: 6px 12px;
+    background: #c0c0c0;
+    width: 100%;
+  }
+  #start-menu button:hover {
+    background: #000080;
+    color: white;
+  }
+
+  /* Scrollbar for window content (90s style) */
+  .window-content::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  .window-content::-webkit-scrollbar-track {
+    background: #c0c0c0;
+  }
+  .window-content::-webkit-scrollbar-thumb {
+    background: #808080;
+    border: 2px solid #c0c0c0;
+  }
+
+</style>
+</head>
+<body>
+
+<div id="desktop">
+  <div id="myWindow" class="window" style="top: 50px; left: 50px;">
+    <div class="title-bar" id="titleBar">
+      <div>My Computer</div>
+      <div class="title-bar-buttons">
+        <div class="title-bar-button" id="minimizeBtn">_</div>
+        <div class="title-bar-button" id="closeBtn">×</div>
+      </div>
+    </div>
+    <div class="window-content">
+      <p>Welcome to Windows 95 style website!</p>
+      <button onclick="alert('Button clicked!')">Click Me</button>
+    </div>
+  </div>
+</div>
+
+<div id="taskbar">
+  <div id="start-button">Start</div>
+</div>
+
+<div id="start-menu">
+  <button onclick="openWindow()">My Computer</button>
+  <button onclick="alert('Settings clicked')">Settings</button>
+  <button onclick="alert('Help clicked')">Help</button>
+  <button onclick="alert('Shutdown clicked')">Shutdown</button>
+</div>
+
+<script>
+  const startButton = document.getElementById('start-button');
+  const startMenu = document.getElementById('start-menu');
+  const myWindow = document.getElementById('myWindow');
+  const minimizeBtn = document.getElementById('minimizeBtn');
+  const closeBtn = document.getElementById('closeBtn');
+  const titleBar = document.getElementById('titleBar');
+
+  // Toggle start menu
+  startButton.addEventListener('click', () => {
+    startMenu.classList.toggle('show');
+  });
+
+  // Close start menu if clicking outside
+  document.addEventListener('click', (e) => {
+    if (!startMenu.contains(e.target) && e.target !== startButton) {
+      startMenu.classList.remove('show');
+    }
+  });
+
+  // Open window function
+  function openWindow() {
+    myWindow.style.display = 'flex';
+    startMenu.classList.remove('show');
+  }
+
+  // Minimize window (hide)
+  minimizeBtn.addEventListener('click', () => {
+    myWindow.style.display = 'none';
+  });
+
+  // Close window (hide)
+  closeBtn.addEventListener('click', () => {
+    myWindow.style.display = 'none';
+  });
+
+  // Drag window
+  let isDragging = false;
+  let offsetX, offsetY;
+
+  titleBar.addEventListener('mousedown', function(e) {
+    isDragging = true;
+    const rect = myWindow.getBoundingClientRect();
+    offsetX = e.clientX - rect.left;
+    offsetY = e.clientY - rect.top;
+    document.body.style.userSelect = 'none';
+  });
+
+  window.addEventListener('mouseup', function() {
+    isDragging = false;
+    document.body.style.userSelect = 'auto';
+  });
+
+  window.addEventListener('mousemove', function(e) {
+    if (isDragging) {
+      let left = e.clientX - offsetX;
+      let top = e.clientY - offsetY;
+      // Keep window inside viewport
+      left = Math.max(0, Math.min(window.innerWidth - myWindow.offsetWidth, left));
+      top = Math.max(0, Math.min(window.innerHeight - myWindow.offsetHeight - 40, top)); // 40 = taskbar height
+      myWindow.style.left = left + 'px';
+      myWindow.style.top = top + 'px';
+    }
+  });
+
+  // Initially hide the window
+  myWindow.style.display = 'none';
+</script>
+
+</body>
+</html>
