@@ -1,23 +1,27 @@
 {
-    "name": "Plutana-eng",
-    "version": "1.0.0",
-    "description": "<p align=\"center\"><img src=\"https://raw.githubusercontent.com/MonkeyGG2/monkeygg2.github.io/main/imgs/icon-256-256.png\" height=\"200\"></p>",
-    "homepage": "https://github.com/Plutana-School/Plutana-School.github.io#readme",
-    "bugs": {
-        "url": "https://github.com/Plutana-School/Plutana-School.github.io/issues"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/Plutana-School/Plutana-School.github.io.git"
-    },
-    "license": "WTFPL",
-    "author": "",
-    "type": "module",
-    "main": "add-game-entry.js",
-    "scripts": {
-        "add-game": "node add-game-entry.js"
-    },
-    "dependencies": {
-        "@inquirer/prompts": "^7.5.3"
-    }
+  "name": "Plutana-eng",
+  "version": "1.0.0",
+  "description": "<p align=\"center\"><img src=\"https://raw.githubusercontent.com/MonkeyGG2/monkeygg2.github.io/main/imgs/icon-256-256.png\" height=\"200\"></p>",
+  "homepage": "https://github.com/Plutana-School/Plutana-School.github.io#readme",
+  "bugs": {
+    "url": "https://github.com/Plutana-School/Plutana-School.github.io/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Plutana-School/Plutana-School.github.io.git"
+  },
+  "license": "WTFPL",
+  "author": "",
+  "type": "module",
+  "main": "add-game-entry.js",
+  "scripts": {
+    "add-game": "node add-game-entry.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^7.5.3",
+    "express": "^4.18.2",
+    "http-proxy-middleware": "^2.0.6",
+    "js-yaml": "^4.1.0"
+  }
 }
